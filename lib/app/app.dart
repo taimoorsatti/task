@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:task/presentation/splash/splash_view.dart';
 import 'package:task/routing/get_routes.dart';
 
-import '../presentation/all_recipes/all_recipe_view.dart';
+
 import '../routing/routes.dart';
 
 
@@ -17,15 +18,15 @@ class TaskApp extends StatelessWidget {
 
     return ScreenUtilInit(
         minTextAdapt: true,
-        designSize: const Size(375, 812),
+        designSize: const Size(379, 815),
         builder: (context, child) {
           return GetMaterialApp(
-            title: "Task",
+            title: "virtual help",
             debugShowCheckedModeBanner: false,
             onGenerateRoute: RouteGenerator.generateRoute,
-            initialRoute: AppRoutes.allRecipes,
+            initialRoute: AppRoutes.splash,
             routes: {
-              AppRoutes.allRecipes:(context)=>  AllRecipeViewScreen(),
+              AppRoutes.splash:(context)=>  const SplashViewScreen(),
             },
           );
         });

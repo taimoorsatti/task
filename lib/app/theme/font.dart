@@ -1,3 +1,3 @@
 class AppFont{
-  static const String fontFamily="";
+  static const String fontFamily="JosefinSans";
 }
