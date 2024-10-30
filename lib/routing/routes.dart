@@ -1,28 +1,57 @@
-class AppRoutes {
-  static const String splash = "/splash";
-  static const String start = "/start";
-  static const String home = "/home";
+import 'package:design_test/modules/calendar/view/calendar_view.dart';
+import 'package:design_test/modules/chat/view/chat_view.dart';
+import 'package:design_test/modules/home/view/home_view.dart';
+import 'package:design_test/modules/overview/view/overview_view.dart';
+import 'package:design_test/modules/splash/view/splash_view.dart';
+import 'package:get/get.dart';
 
-  static const String login = "/login";
-  static const String signup = "/signup";
-  static const String help = "/help";
-  static const String calendar = "/Calendar";
-  static const String chat = "/chat";
-  static const String group = "/group";
-  static const String groupchatroom = "/groupchatroom";
-  static const String singlechatroom = "/singlechatroom";
-  static const String studentlogin = "/studentlogin";
-  static const String studentSignup = "/studentsignup";
-  static const String studentchat = "/studentchat";
-  static const String studentchatComponent = "/studentchatComponent";
-  static const String offers = "/offer3";
-  static const String service1 = "/service1";
-  static const String assignment = "/Assignment";
-  static const String tutor = "/Tutor";
-  static const String onBoarding = "/omBoarding";
-  static const String setting = "/setting";
-  static const String addcard = "/addcard";
-  static const String forget = "/forget";
-  static const String otp = "/otp";
-  static const String homeStudent = "/studentHome";
+import '../modules/chat/view/chat_detail_view.dart';
+
+class Routes {
+  static final Routes _sharedInstance = Routes._internal();
+
+  factory Routes() {
+    return _sharedInstance;
+  }
+  Routes._internal();
+
+  String getSplashPage() => SplashView.id;
+  String getHomePage() => HomeView.id;
+  String getOverViewPage() => OverviewView.id;
+  String getCalendarPage() => CalendarView.id;
+  String getChatPage() => ChatView.id;
+  String getChatDetailsPage() => ChatDetailsView.id;
+
+  List<GetPage> routeMap = [
+    GetPage(
+      name: SplashView.id,
+      page: () => SplashView(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: HomeView.id,
+      page: () => HomeView(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: ChatView.id,
+      page: () => const ChatView(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: OverviewView.id,
+      page: () => const OverviewView(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: CalendarView.id,
+      page: () => const CalendarView(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: ChatDetailsView.id,
+      page: () => const ChatDetailsView(),
+      transition: Transition.cupertino,
+    ),
+  ];
 }

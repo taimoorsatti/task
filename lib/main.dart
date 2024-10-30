@@ -1,18 +1,14 @@
+import 'package:design_test/helper/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'my_app.dart';
 
-
-import 'app/app.dart';
-import 'app/dependencies.dart';
-
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initApp();
-  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown
-  ]);
-  runApp(const TaskApp());
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
+  await alphaInit();
+  runApp(const MyApp());
 }
